@@ -3,11 +3,9 @@ import tkinter as tk
 import string
 import random
 
-
 def create_random_key(size):
     characters = string.ascii_letters + string.digits
     return ''.join(random.choice(characters) for _ in range(size))
-
 
 def encrypt_with_probabilistic_cipher(message, key):
     encrypted_message, offsets = [], []
@@ -21,11 +19,9 @@ def encrypt_with_probabilistic_cipher(message, key):
 
     return ''.join(encrypted_message), offsets
 
-
 def decrypt_with_probabilistic_cipher(encrypted_message, key, offsets):
     decrypted_message = [chr((ord(enc_char) - ord(k) - offset) % 256) for enc_char, k, offset in zip(encrypted_message, key, offsets)]
     return ''.join(decrypted_message)
-
 
 class CipherApp:
     def __init__(self, root):
