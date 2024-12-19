@@ -118,7 +118,6 @@ class CipherApp:
         self.text_display.insert(tk.END, text)
         self.text_display.config(state=tk.DISABLED)
 
-
 root_window = tk.Tk()
 app = CipherApp(root_window)
 root_window.geometry("600x500")
