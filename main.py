@@ -99,7 +99,6 @@ class CipherApp:
             self.text_display.config(state=tk.DISABLED)
             return
 
-        # Получаем текст из текстового поля (это должно быть зашифрованное сообщение)
         encrypted_message = self.saved_encrypted_text  # Используем сохраненный зашифрованный текст
         if not encrypted_message:
             self.text_display.config(state=tk.NORMAL)
