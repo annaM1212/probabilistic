@@ -66,7 +66,7 @@ class CipherApp:
             return
 
         key = create_random_key(len(plaintext))
-        self.saved_key = key  # Сохраняем ключ
+        self.saved_key = key
         self.key_label.config(text=f'Ключ: {key}')
 
     def perform_encryption(self):
@@ -86,8 +86,8 @@ class CipherApp:
             return
 
         ciphertext, offsets = encrypt_with_probabilistic_cipher(plaintext, self.saved_key)
-        self.saved_offsets = offsets  # Сохраняем смещения
-        self.saved_encrypted_text = ciphertext  # Сохраняем зашифрованный текст
+        self.saved_offsets = offsets  
+        self.saved_encrypted_text = ciphertext  
 
         self.update_display(ciphertext, is_encrypted=True)
 
@@ -99,7 +99,7 @@ class CipherApp:
             self.text_display.config(state=tk.DISABLED)
             return
 
-        encrypted_message = self.saved_encrypted_text  # Используем сохраненный зашифрованный текст
+        encrypted_message = self.saved_encrypted_text  
         if not encrypted_message:
             self.text_display.config(state=tk.NORMAL)
             self.text_display.delete(1.0, tk.END)
